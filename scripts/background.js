@@ -11,7 +11,7 @@ function createShootingemoji() {
   emoji.style.left = `${Math.random() * 100}%`;
   emoji.style.top = `${Math.random() * 50}%`;
   
-  const duration = Math.random() * 3 + 2;
+  const duration = Math.random() * 5 + 5;
   emoji.style.animationDuration = `${duration}s`; 
   
   background.appendChild(emoji);
