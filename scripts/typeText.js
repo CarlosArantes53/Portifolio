@@ -13,7 +13,8 @@ Além das minhas habilidades técnicas, sou fixionado por gestão de equipes e p
     "inteligência artificial": '<span class="highlight">inteligência artificial</span>',
     "deep learning": '<span class="highlight">deep learning</span>',
     "agentes inteligentes": '<span class="highlight">agentes inteligentes</span>',
-    "gestão de equipes e projetos de software": '<span class="highlight">gestão de equipes e projetos de software</span>'
+    "gestão de equipes": '<span class="highlight">gestão de equipes</span>',
+    "projetos de software": '<span class="highlight">projetos de software</span>'
   };
 
   let i = 0;
