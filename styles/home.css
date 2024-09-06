@@ -21,36 +21,34 @@ body, html {
   justify-content: center;
 }
 
+.portfolio-box,
+#theme-toggle {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
 #theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-  z-index: 10;
   transition: background-color 0.3s, color 0.3s;
 }
 
-
-
 .portfolio-box {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   padding: 20px;
   max-width: 800px;
   width: 90%;
   height: auto;
   margin: 20px auto;
   position: relative;
-  z-index: 1;
-  color: var(--branco);
   border-radius: 15px;
   text-align: center;
 }
-
 
 @media (max-width: 600px) {
   #theme-toggle {
@@ -83,6 +81,20 @@ body, html {
   }
 }
 
+.portfolio-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .portfolio-box p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+
 @media (min-width: 1025px) {
   #theme-toggle {
     font-size: 16px;
@@ -105,8 +117,6 @@ body.dark-mode .background {
   background: var(--dark-blue);
 }
 
-
-
 body.light-mode #theme-toggle, 
 body.light-mode .portfolio-box {
   background-color: var(--branco-transp);
@@ -120,9 +130,6 @@ body.dark-mode .portfolio-box {
   color: var(--branco);
   border: 1px solid var(--branco);
 }
-
-
-
 
 @keyframes shoot {
   0% {
@@ -139,4 +146,14 @@ body.dark-mode .portfolio-box {
   position: absolute;
   font-size: 20px;
   animation: shoot 3s linear forwards; 
+}
+
+body.light-mode .highlight {
+  font-weight: bold;
+  color: var(--cor-lua);
+}
+
+body.dark-mode .highlight {
+  font-weight: bold;
+  color: var(--cor-sol);
 }
