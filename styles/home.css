@@ -5,11 +5,12 @@ body, html {
   padding: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
 #theme-toggle {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   padding: 10px 20px;
@@ -24,11 +25,15 @@ body, html {
 }
 
 .background {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background: var(--background-dark);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .portfolio-box {
@@ -38,38 +43,59 @@ body, html {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   padding: 20px;
-  width: 40%;
-  height: 40%;
-  margin: 50px auto;
+  max-width: 800px;
+  width: 90%;
+  height: auto;
+  margin: 20px auto;
   position: relative;
   z-index: 1;
   color: var(--text-dark);
   border-radius: 15px;
+  text-align: center;
 }
 
-@keyframes shoot {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
+
+@media (max-width: 600px) {
+  #theme-toggle {
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  100% {
-    transform: translate(100vw, 100vh) rotate(360deg);
-    opacity: 0;
+
+  .portfolio-box {
+    width: 90%;
+    padding: 15px;
+    margin: 20px auto;
+    font-size: 14px;
+  }
+
+  .background {
+    height: 100%;
   }
 }
 
-.shooting-emoji {
-  position: absolute;
-  font-size: 20px;
-  animation: shoot 3s linear forwards;
+@media (min-width: 601px) and (max-width: 1024px) {
+  #theme-toggle {
+    font-size: 15px;
+    padding: 9px 18px;
+  }
+
+  .portfolio-box {
+    width: 70%;
+    padding: 18px;
+    margin: 30px auto;
+  }
 }
 
-@keyframes rotateemoji {
-  0% {
-    transform: rotate(0deg);
+@media (min-width: 1025px) {
+  #theme-toggle {
+    font-size: 16px;
+    padding: 10px 20px;
   }
-  100% {
-    transform: rotate(360deg);
+
+  .portfolio-box {
+    width: 40%;
+    padding: 20px;
+    margin: 50px auto;
   }
 }
 
@@ -103,4 +129,30 @@ body.light-mode .portfolio-box {
   background-color: var(--portfolio-bg-light);
   border: 2px solid var(--border-light);
   color: var(--text-light);
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, -10vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 110vh);
+    opacity: 0;
+  }
+}
+
+.shooting-emoji {
+  position: absolute;
+  font-size: 20px;
+  animation: shoot 3s linear forwards; 
+}
+
+@keyframes rotateemoji {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
