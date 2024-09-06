@@ -1,56 +1,98 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .background {
-    width: 100vw;
-    height: 100vh;
-    background: #020308;
-    position: relative;
-    overflow: hidden;
-  }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
 
-  .portfolio-box {
-    background-color: rgba(128, 128, 128, 0.1);
-    border: 2px solid gray;
-    box-shadow: 0 8px 32px 0 solid gray;
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
-    padding: 20px;
-    width: 40%;
-    height: 40%;
-    margin: 50px auto;
-    position: relative;
-    z-index: 1;
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: #020308;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-box {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: 2px solid gray;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 20px;
+  width: 40%;
+  height: 40%;
+  margin: 50px auto;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  border-radius: 15px;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
   }
-  
-  @keyframes shoot {
-    0% {
-      transform: translate(0, 0) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(100vw, 100vh) rotate(360deg);
-      opacity: 0;
-    }
+  100% {
+    transform: translate(100vw, 100vh) rotate(360deg);
+    opacity: 0;
   }
-  
-  .shooting-emoji {
-    position: absolute;
-    font-size: 20px;
-    animation: shoot 3s linear forwards;
+}
+
+.shooting-emoji {
+  position: absolute;
+  font-size: 20px;
+  animation: shoot 3s linear forwards;
+}
+
+@keyframes rotateemoji {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes rotateemoji {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
   }
-  
+}
+
+body.light-mode #theme-toggle {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #ffffff;
+}
+
+body.light-mode .background {
+  background: #ffffff;
+}
+
+body.light-mode .portfolio-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #000;
+  color: #000;
+}
+
+body.dark-mode .background {
+  background: #020308;
+}
+
+body.dark-mode .portfolio-box {
+  background-color: rgba(128, 128, 128, 0.1);
+  border: 2px solid gray;
+  color: #fff;
+}
