@@ -1,0 +1,18 @@
+/* colors.css */
+:root {
+    --background-light: #ffffff;
+    --background-dark: #020308;
+    --portfolio-bg-light: rgba(255, 255, 255, 0.1);
+    --portfolio-bg-dark: rgba(128, 128, 128, 0.1);
+    --border-light: #000;
+    --border-dark: rgb(60, 60, 60);
+    --text-light: #000;
+    --text-dark: #fff;
+    --theme-toggle-light-bg: rgba(0, 0, 0, 0);
+    --theme-toggle-dark-bg: rgba(120, 120, 120, 0.5);
+    --theme-toggle-light-color: #020308;
+    --theme-toggle-dark-color: #ffffff;
+    --theme-toggle-border-light: #020308;
+    --theme-toggle-border-dark: rgb(60, 60, 60);
+  }
+  
