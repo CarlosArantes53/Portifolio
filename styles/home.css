@@ -9,25 +9,10 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-#theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: var(--theme-toggle-dark-bg);
-  color: var(--theme-toggle-dark-color);
-  border: 1px solid var(--theme-toggle-border-dark);
-  border-radius: 5px;
-  z-index: 10;
-  transition: background-color 0.3s, color 0.3s;
-}
-
 .background {
   width: 100%;
   min-height: 100vh;
-  background: var(--background-dark);
+  background: var(--dark-blue);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -36,9 +21,21 @@ body, html {
   justify-content: center;
 }
 
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+
 .portfolio-box {
-  background-color: var(--portfolio-bg-dark);
-  border: 2px solid var(--border-dark);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -49,7 +46,7 @@ body, html {
   margin: 20px auto;
   position: relative;
   z-index: 1;
-  color: var(--text-dark);
+  color: var(--branco);
   border-radius: 15px;
   text-align: center;
 }
@@ -99,37 +96,33 @@ body, html {
   }
 }
 
-body.light-mode #theme-toggle {
-  background-color: var(--theme-toggle-light-bg);
-  color: var(--theme-toggle-light-color);
-  border: 1px solid var(--theme-toggle-border-light);
-}
-
-body.dark-mode #theme-toggle {
-  background-color: var(--theme-toggle-dark-bg);
-  color: var(--theme-toggle-dark-color);
-  border: 1px solid var(--theme-toggle-border-dark);
-}
 
 body.light-mode .background {
-  background: var(--background-light);
+  background: var(--branco);
 }
 
 body.dark-mode .background {
-  background: var(--background-dark);
+  background: var(--dark-blue);
 }
 
-body.dark-mode .portfolio-box {
-  background-color: var(--portfolio-bg-dark);
-  border: 2px solid var(--border-dark);
-  color: var(--text-dark);
-}
 
+
+body.light-mode #theme-toggle, 
 body.light-mode .portfolio-box {
-  background-color: var(--portfolio-bg-light);
-  border: 2px solid var(--border-light);
-  color: var(--text-light);
+  background-color: var(--branco-transp);
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
 }
+
+body.dark-mode #theme-toggle, 
+body.dark-mode .portfolio-box {
+  background-color: var(--cinza-transp);
+  color: var(--branco);
+  border: 1px solid var(--branco);
+}
+
+
+
 
 @keyframes shoot {
   0% {
@@ -146,13 +139,4 @@ body.light-mode .portfolio-box {
   position: absolute;
   font-size: 20px;
   animation: shoot 3s linear forwards; 
-}
-
-@keyframes rotateemoji {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
