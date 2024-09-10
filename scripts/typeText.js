@@ -18,7 +18,7 @@ Além das minhas habilidades técnicas, sou fixionado por gestão de equipes e p
   };
 
   let i = 0;
-  const speed = 100;
+  const speed = 30;
   const descriptionElement = document.getElementById('description');
 
   function typeWriter() {
